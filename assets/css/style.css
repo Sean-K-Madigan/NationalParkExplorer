@@ -1,5 +1,4 @@
 /* Reset CSS Code */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -75,10 +74,6 @@ textarea:not([rows]) {
 }
 
 /* Custom Stylesheet */
-* {
-    font-family: 'Playpen Sans', 'Familjen Grotesk', 'Sans Serif';
-}
-
 /* Colors */
 :root {
     --airblue: #68A5BF;
@@ -91,16 +86,16 @@ textarea:not([rows]) {
     --text-shadow: #67676799;
 }
 
+* {
+    font-family: 'Playpen Sans', 'Familjen Grotesk', 'Sans Serif';
+}
+
+
 header {
     background-color: #5B8246;
 }
 
 h1, h2 {
     font-family: 'Tilt Prism';
-    font-size: 75px;
     color: var(--citron);
-}
-
-h2 {
-    font-size: 50px;
 }
