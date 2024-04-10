@@ -52,7 +52,7 @@ fetch(fetchUrl)
     console.error('Error fetching data:', error);
   });
 
-  function createParkCard (data) = {
+  function createParkCard (data) {
     parkNameEl.appendChild(createHTMLElement('h2', data.park));
     park
   }
