@@ -1,3 +1,8 @@
+const parkNameEl = document.getElementById('park-name');
+const parkDescriptionEl = document.getElementById('description');
+const parkWeatherEl = document.getElementById('weather');
+const activitiesEl = document.getElementById('activities')
+
 // Define the URL of the NPS API endpoint
 const apiUrl = 'https://developer.nps.gov/api/v1/parks';
 
@@ -23,10 +28,21 @@ fetch(fetchUrl)
   .then(data => {
     const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
 
+    
     // Check if the park was found
     if (park) {
-      // Display information about the park
-      console.log(park);
+
+        const activityNames = park.activities.map(activity => activity.name)
+        // Display information about the park
+        const parkData = {
+            park: park.fullName,
+            description: park.description,
+            fees: park.weatherInfo,
+            activities: activityNames
+        }
+
+        createParkCard(parkData);
+      console.log(parkData);
     } else {
       console.log('Park not found');
     }
@@ -35,3 +51,8 @@ fetch(fetchUrl)
     // Handle errors
     console.error('Error fetching data:', error);
   });
+
+  function createParkCard (data) = {
+    parkNameEl.appendChild(createHTMLElement('h2', data.park));
+    park
+  }
