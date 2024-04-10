@@ -1,7 +1,7 @@
 const parkNameEl = document.getElementById('park-name');
 const parkDescriptionEl = document.getElementById('description');
 const parkWeatherEl = document.getElementById('weather');
-const activitiesEl = document.getElementById('activities')
+const parkActivitiesEl = document.getElementById('activities')
 
 // Define the URL of the NPS API endpoint
 const apiUrl = 'https://developer.nps.gov/api/v1/parks';
@@ -52,7 +52,17 @@ fetch(fetchUrl)
     console.error('Error fetching data:', error);
   });
 
-  function createParkCard (data) = {
+  function createParkCard (data) {
     parkNameEl.appendChild(createHTMLElement('h2', data.park));
-    park
+    parkDescriptionEl.appendChild(createHTMLElement('p', data.description));
+    parkWeatherEl.appendChild(createHTMLElement('p', data.weather));
+
+    const activitiesList = document.createElement('ul')
+
+    data.activities.forEach(activity => {
+        const activityItem = createHTMLElement('li', activity)
+        activitiesList.appendChild(activityItem)
+    })
+    parkActivitiesEl.appendChild(activitiesList);
+
   }
