@@ -82,7 +82,8 @@ textarea:not([rows]) {
     --engineering: #B80C09;
     --brown: #614B3F;
     --lightgreen: #9AB87A;
-    --ferngreeb: #5B8246;
+    --ferngreen: #5B8246;
+    --almond: #f5efeb;
     --text-shadow: #67676799;
 }
 
@@ -90,15 +91,26 @@ textarea:not([rows]) {
     font-family: 'Playpen Sans', 'Familjen Grotesk', 'Sans Serif';
 }
 
+body {
+    background-color: var(--almond);
+} 
+
 /* Header and Title */
 header {
     background-color: #5B8246;
+    border: var(--ochre) solid 5px;
+    border-radius: 15px;
 }
 
 h1, h2 {
     font-family: 'Tilt Prism';
     color: var(--citron);
     margin-left: 40px;
+    padding: 15px
+}
+
+h2 {
+    margin-left: 75px;
 }
 
 /* Main */
@@ -109,9 +121,40 @@ h1, h2 {
 }
 
 .custom-search {
-    height: 80vh;
+    height: 75vh;
+    border: var(--brown) double 6px;
+    border-radius: 15px;
+    margin-right: 7px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 70%;
+    height: 5%;
 }
 
 .custom-park-info {
-    height: 80vh
+    height: 75vh;
+    border: var(--airblue) double 6px;
+    border-radius: 15px;
+}
+
+
+/* Footer */
+
+footer {
+    display: block;
+    text-align: center;
+    background-color: var(--ferngreen);
+    height: 7vh;
+    border: var(--ochre) solid 5px;
+    border-radius: 15px;
+}
+
+h3 {
+    font-family: 'Tilt Prism'
+    
 }
