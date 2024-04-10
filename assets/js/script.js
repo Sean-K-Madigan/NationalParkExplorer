@@ -15,6 +15,11 @@ const searchTerm = 'redwood';
 // Construct the fetch URL with the search term and API key
 const fetchUrl = `${apiUrl}?q=${searchTerm}&api_key=${apiKey}`;
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search-input');
+searchButton.addEventListener('click', function() {
+});
+
 // Make the fetch request
 fetch(fetchUrl)
   .then(response => {
@@ -54,15 +59,5 @@ fetch(fetchUrl)
 
   function createParkCard (data) {
     parkNameEl.appendChild(createHTMLElement('h2', data.park));
-    parkDescriptionEl.appendChild(createHTMLElement('p', data.description));
-    parkWeatherEl.appendChild(createHTMLElement('p', data.weather));
-
-    const activitiesList = document.createElement('ul')
-
-    data.activities.forEach(activity => {
-        const activityItem = createHTMLElement('li', activity)
-        activitiesList.appendChild(activityItem)
-    })
-    parkActivitiesEl.appendChild(activitiesList);
-
+    park
   }
