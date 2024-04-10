@@ -79,7 +79,28 @@ textarea:not([rows]) {
     font-family: 'Playpen Sans', 'Familjen Grotesk', 'Sans Serif';
 }
 
-h1 {
+/* Colors */
+:root {
+    --airblue: #68A5BF;
+    --citron: #CCC53D;
+    --ochre: #C97016;
+    --engineering: #B80C09;
+    --brown: #614B3F;
+    --lightgreen: #9AB87A;
+    --ferngreeb: #5B8246;
+    --text-shadow: #67676799;
+}
+
+header {
+    background-color: #5B8246;
+}
+
+h1, h2 {
     font-family: 'Tilt Prism';
+    font-size: 75px;
+    color: var(--citron);
+}
+
+h2 {
     font-size: 50px;
 }
