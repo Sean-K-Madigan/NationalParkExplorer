@@ -57,13 +57,7 @@ fetch(fetchUrl)
     console.error('Error fetching data:', error);
   });
 
-  function createParkCard(data) {
-    parkNameEl.innerHTML = '';
-    parkDescriptionEl.innerHTML = '';
-    parkWeatherEl.innerHTML = '';
-    activitiesEl.innerHTML = '';
-  
-    // Create and append elements for park information
+  function createParkCard (data) {
     parkNameEl.appendChild(createHTMLElement('h2', data.park));
     parkDescriptionEl.appendChild(createHTMLElement('p', data.description));
     parkWeatherEl.appendChild(createHTMLElement('p', data.fees));

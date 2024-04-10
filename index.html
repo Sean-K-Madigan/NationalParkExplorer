@@ -17,80 +17,99 @@
     <body>
         <!-- Header with title -->
         <header>
-            <h1 class="is-size-3-mobile is-size-1-desktop">National Park Explorer</h1>
-            <h2 class="is-size-4-mobile is-size-2-desktop">- Your Next Adventure Awaits</h2>
+            <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
+            <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
         </header>
 
         <!-- Main section with two children one for search and recents and the other for info and images -->
         <main>
 
             <!-- Search and recent section with two children one for search bar and one for recents  -->
-            <section class="container">
-                <div class="columns is-multiline">
-                    <form class="search">
-                        <input id='searchInput'type="text" placeholder="What park will you visit next?" name="search" width="">
-                        <button id='search-button' class="button search" type="submit">Search</button>
-                    </form>
 
-                    <!-- populate a list of recent searches as buttons to navigate back to that infomration -->
-                    <div id="recentSearches"></div>
+            <section class="section">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-12-tablet is-4-desktop custom-search">
+                        <form class="search">
+                            <input id='searchInput'type="text" placeholder="What park will you visit next?" name="search" width="">
+                            <button id='searchBtn' class="button search" type="submit">Search</button>
+                        </form>
 
-                </section>
-
-                <!-- Info and images section with two children -->
-                <section class="container">
+                        <!-- populate a list of recent searches as buttons to navigate back to that infomration -->
+                        <div id="recentSearches">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis porro, similique ex omnis voluptas, amet quam tenetur assumenda praesentium itaque incidunt nam, earum temporibus vitae velit enim ad officiis officia.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Info and images section with two children -->
 
                     <!-- Park info section with two children -->
-                    <div id="parkInfo">
+                
+                    <div id="parkInfo" class="column is-12-tablet is-8-desktop custom-park-info">
                         
                         <!-- Thumbnail with address link -->
-                        <div id="park-name"></div>
+                        <div id="park-name" class="column is-size-5">
+                            <h4>name of park goes here</h4>
+                        </div>
 
+                        <div class="container">
+                            <div class="columns">
+                        
                         <!-- Park info including description and important info with two children -->
-                        <div id="activities">
 
-                            <div id="description"></div>
+                        <div id="descriptionAndImportant">
+                            
+                            <div id="description">
+                                <h4>Park Description</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem! Nobis provident facilis voluptates, repudiandae voluptatum voluptas aliquam tempore voluptatem voluptate fuga exercitationem necessitatibus labore ea facere accusamus reiciendis sunt quasi animi quisquam consequatur iste. Quia eveniet repellat debitis iusto!</p>
+                            </div>
+
 
                             <!-- Important information links with 3 children -->
                             
-
-                                <div id="weather"></div>
-
-                                <button class="js-modal-trigger" data-target="modal-js-activities">
-                                    Activities</button>
-
+                            <div id="weather">
+                                <h4>Weather</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem molestiae nostrum cupiditate tempora sunt beatae suscipit autem provident ullam odit!</p>
+                            </div>
+                            
+                            <button class="js-modal-trigger" data-target="modal-js-activities">
+                                Activities</button>
+                                
                                 <div id="modal-js-activities" class="modal">
                                     <div class="modal-background"></div>
                                     <div class="modal-card">
-                                    <header class="modal-card-head">
-                                        <p class="modal-card-title">Modal title</p>
-                                        <button class="delete" aria-label="close"></button>
-                                    </header>
-                                    <section class="modal-card-body activities">
-                                        <!-- Content ... -->
-                                    </section>
-                                    <footer class="modal-card-foot">
-                                        <div class="buttons">
-                                        <button class="button is-success">Save changes</button>
-                                        <button class="button">Cancel</button>
-                                        </div>
-                                    </footer>
+                                        <header class="modal-card-head">
+                                            <p class="modal-card-title">Modal title</p>
+                                            <button class="delete" aria-label="close"></button>
+                                        </header>
+                                        <section class="modal-card-body activities">
+                                            <!-- Content -->
+                                        </section>
+                                        <footer class="modal-card-foot">
+                                            <div class="buttons">
+                                                <button class="button is-success">Save changes</button>
+                                                <button class="button">Cancel</button>
+                                            </div>
+                                        </footer>
                                     </div>
                                 </div>
-
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                        
+                        
+                        <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
+                        <div id="gallery">
                             
                         </div>
                     </div>
-
-                    <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
-                    <div id="gallery">
-
-                    </div>
+                </div>
             </section>
         </main>
 
         <footer>
-            <h3>Adventure safely and enjoy!!</h3>
+            <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
             <p>Api Sources</p>
         </footer>
 
