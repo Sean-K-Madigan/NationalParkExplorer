@@ -90,7 +90,7 @@ textarea:not([rows]) {
     font-family: 'Playpen Sans', 'Familjen Grotesk', 'Sans Serif';
 }
 
-
+/* Header and Title */
 header {
     background-color: #5B8246;
 }
@@ -98,4 +98,20 @@ header {
 h1, h2 {
     font-family: 'Tilt Prism';
     color: var(--citron);
+    margin-left: 40px;
+}
+
+/* Main */
+/* Search and Recent Div */
+
+.container {
+    margin-top: 20px;
+}
+
+.custom-search {
+    height: 80vh;
+}
+
+.custom-park-info {
+    height: 80vh
 }

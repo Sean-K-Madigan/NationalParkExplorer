@@ -17,8 +17,8 @@
     <body>
         <!-- Header with title -->
         <header>
-            <h1 class="is-size-3-mobile is-size-1-desktop">National Park Explorer</h1>
-            <h2 class="is-size-4-mobile is-size-2-desktop">- Your Next Adventure Awaits</h2>
+            <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
+            <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits</h2>
         </header>
 
         <!-- Main section with two children one for search and recents and the other for info and images -->
@@ -27,6 +27,7 @@
             <!-- Search and recent section with two children one for search bar and one for recents  -->
             <section class="container">
                 <div class="columns is-multiline">
+                    <div class="column is-12-tablet is-4-desktop custom-search">
                     <form class="search">
                         <input id='searchInput'type="text" placeholder="What park will you visit next?" name="search" width="">
                         <button id='searchBtn' class="button search" type="submit">Search</button>
@@ -34,14 +35,16 @@
 
                     <!-- populate a list of recent searches as buttons to navigate back to that infomration -->
                     <div id="recentSearches"></div>
+                    </div>
+                </div>
 
                 </section>
 
                 <!-- Info and images section with two children -->
                 <section class="container">
-
+                    <div class="columns is-multiline">
                     <!-- Park info section with two children -->
-                    <div id="parkInfo">
+                    <div id="parkInfo" class="column is-12-tablet is-8-desktop custom-park-info">
                         
                         <!-- Thumbnail with address link -->
                         <div id="adressLink"></div>
@@ -77,7 +80,6 @@
                                     </footer>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -86,6 +88,7 @@
                     <div id="gallery">
 
                     </div>
+                </div>
             </section>
         </main>
 
