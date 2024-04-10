@@ -15,6 +15,11 @@ const searchTerm = 'redwood';
 // Construct the fetch URL with the search term and API key
 const fetchUrl = `${apiUrl}?q=${searchTerm}&api_key=${apiKey}`;
 
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search-input');
+searchButton.addEventListener('click', function() {
+});
+
 // Make the fetch request
 fetch(fetchUrl)
   .then(response => {
@@ -52,7 +57,24 @@ fetch(fetchUrl)
     console.error('Error fetching data:', error);
   });
 
-  function createParkCard (data) = {
+  function createParkCard(data) {
+    parkNameEl.innerHTML = '';
+    parkDescriptionEl.innerHTML = '';
+    parkWeatherEl.innerHTML = '';
+    activitiesEl.innerHTML = '';
+  
+    // Create and append elements for park information
     parkNameEl.appendChild(createHTMLElement('h2', data.park));
-    park
+    parkDescriptionEl.appendChild(createHTMLElement('p', data.description));
+    parkWeatherEl.appendChild(createHTMLElement('p', data.fees));
+  
+    // Create and append elements for activities
+    data.activities.forEach(activity => {
+      activitiesEl.appendChild(createHTMLElement('li', activity));
+    });
+  };
+  function createHTMLElement(tagName, text) {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    return element;
   }
