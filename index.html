@@ -31,8 +31,8 @@
                     <div class="columns">
                         <div class="column is-12-tablet is-4-desktop custom-search">
                         <form class="search">
-                            <input id='searchInput'type="text" placeholder="What park will you visit next?" name="search" width="">
-                            <button id='searchBtn' class="button search" type="submit">Search</button>
+                            <input id='search-input'type="text" placeholder="What park will you visit next?" name="search" width="">
+                            <button id='search-button' class="button search" type="submit">Search</button>
                         </form>
 
                         <!-- populate a list of recent searches as buttons to navigate back to that infomration -->
@@ -49,7 +49,7 @@
                         
                         <!-- Thumbnail with address link -->
                         <div id="park-name" class="column is-size-5">
-                            <h4>name of park goes here</h4>
+                            
                         </div>
 
                         <div class="container">
@@ -61,7 +61,6 @@
                             
                             <div id="description">
                                 <h4>Park Description</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem! Nobis provident facilis voluptates, repudiandae voluptatum voluptas aliquam tempore voluptatem voluptate fuga exercitationem necessitatibus labore ea facere accusamus reiciendis sunt quasi animi quisquam consequatur iste. Quia eveniet repellat debitis iusto!</p>
                             </div>
 
 
@@ -69,7 +68,6 @@
                             
                             <div id="weather">
                                 <h4>Weather</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem molestiae nostrum cupiditate tempora sunt beatae suscipit autem provident ullam odit!</p>
                             </div>
                             
                             <button class="js-modal-trigger" data-target="modal-js-activities">
@@ -82,7 +80,7 @@
                                             <p class="modal-card-title">Modal title</p>
                                             <button class="delete" aria-label="close"></button>
                                         </header>
-                                        <section class="modal-card-body activities">
+                                        <section id="activities" class="modal-card-body">
                                             <!-- Content -->
                                         </section>
                                         <footer class="modal-card-foot">
