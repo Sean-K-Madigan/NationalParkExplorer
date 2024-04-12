@@ -61,58 +61,57 @@ searchButton.addEventListener('click', function(event) {
 // Make the fetch request
 
 function createParkCard (data) {
-console.log(data.description);
-console.log(parkDescriptionEl);
+  // Clear existing content
+  parkNameEl.innerHTML = '';
+  parkDescriptionEl.innerHTML = '';
+  parkWeatherEl.innerHTML = '';
+  parkActivitiesEl.innerHTML = '';
 
-    const newHeader = document.createElement('h2');
-    const descriptionParagraph = document.createElement('p');
-    const weatherParagraph = document.createElement('p');
-    parkNameEl.appendChild(newHeader).textContent = data.park;
-    parkDescriptionEl.appendChild(descriptionParagraph).textContent = data.description;
-    parkWeatherEl.appendChild(weatherParagraph).textContent = data.weather;
+  const newHeader = document.createElement('h2');
+  const descriptionParagraph = document.createElement('p');
+  const weatherParagraph = document.createElement('p');
+  parkNameEl.appendChild(newHeader).textContent = data.park;
+  parkDescriptionEl.appendChild(descriptionParagraph).textContent = data.description;
+  parkWeatherEl.appendChild(weatherParagraph).textContent = data.weather;
 
-    const activitiesList = document.createElement('ul')
+  const activitiesList = document.createElement('ul')
 
-    data.activities.forEach(activity => {
-        const activityItem = document.createElement('li')
-        activitiesList.appendChild(activityItem).textContent = activity
-    })
-    parkActivitiesEl.appendChild(activitiesList);
-
-  }
-
-
+  data.activities.forEach(activity => {
+      const activityItem = document.createElement('li')
+      activitiesList.appendChild(activityItem).textContent = activity
+  })
+  parkActivitiesEl.appendChild(activitiesList);
+}
 
 const gallery = document.getElementById('gallery')
 function getParkPhotos(event){
-    event.preventDefault();
-    const apiUrl = `https://api.pexels.com/v1/search`
-    const parks = "Zion";
-    const fetchPics = `${apiUrl}?query=${parks}&per_page=6`;
-    fetch(fetchPics, {
-        headers: {
-            Authorization: "YHJTxEYXr7hGIeSQrGhw7Q5cjhlXubPRmgYVQUK7PXD6ZBhd3sjszejz"
-        }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch images")
-            }
-            return response.json();
-        })
-        .then (data => {
-            console.log(data)
-            gallery.innerHTML = '';
-            data.photos.forEach(photo => {
-              const img = document.createElement('img');
-              img.src = photo.src.medium;
-              gallery.appendChild(img);
-        });
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-
+  event.preventDefault();
+  const apiUrl = `https://api.pexels.com/v1/search`
+  const parks = searchInput.value;
+  const fetchPics = `${apiUrl}?query=${parks}&per_page=4`;
+  fetch(fetchPics, {
+      headers: {
+          Authorization: "YHJTxEYXr7hGIeSQrGhw7Q5cjhlXubPRmgYVQUK7PXD6ZBhd3sjszejz"
+      }
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Failed to fetch images")
+          }
+          return response.json();
+      })
+      .then (data => {
+          // Clear existing content
+          gallery.innerHTML = '';
+          data.photos.forEach(photo => {
+            const img = document.createElement('img');
+            img.src = photo.src.medium;
+            gallery.appendChild(img);
+      });
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
 }
 searchButton.addEventListener('click', getParkPhotos);
 
