@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
+  
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,102 +26,113 @@
                     </div>
                     <div class="column is--fullwidth">
                         <div class="custom-search">
-                        <form class="search p-2 align-items-space-around">
-                            <input id='search-input' class="mb-5 " type="text" placeholder="What park will you visit next?" name="search">
-                            <button id='search-button' class="button justify-content-center" type="submit">Search</button>
+                          <form class="search p-2 align-items-space-around">
+                            <input id='search-input' class="mb-5 " type="text"
+                                placeholder="What park will you visit next?" name="search">
+                            <button id='search-button' class="button justify-content-center"
+                                type="submit">Search</button>
                         </form>
-                </div>
+                    </div>
                 </div>
             </div>
-        </header>
+    </header>
 
 
-        <!-- Main section with two children one for search and recents and the other for info and images -->
-        <main>
+    <!-- Main section with two children one for search and recents and the other for info and images -->
+    <main>
 
-            <!-- Search and recent section with two children one for search bar and one for recents  -->
+        <!-- Search and recent section with two children one for search bar and one for recents  -->
 
-            <section class="section">
-                <div class="container">
-                    <div class="columns">
-                    
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+
                     <!-- Info and images section with two children -->
 
                     <!-- Park info section with two children -->
-                
+
                     <div id="parkInfo" class="column is-12-tablet custom-park-info">
-                        
+
                         <!-- Thumbnail with address link -->
                         <div id="park-name" class="column is-size-5">
-                            
+
                         </div>
 
                         <div class="container">
                             <div class="columns">
                                 <div class="column">
-                                <div id="descriptionAndImportant">
-                                    
-                                    <div id="description">
-                                        <h4>Park Description</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem! Nobis provident facilis voluptates, repudiandae voluptatum voluptas aliquam tempore voluptatem voluptate fuga exercitationem necessitatibus labore ea facere accusamus reiciendis sunt quasi animi quisquam consequatur iste. Quia eveniet repellat debitis iusto!</p>
-                                    </div>
+                                    <div id="descriptionAndImportant">
 
-                                </div>
-                        
-                        <!-- Park info including description and important info with two children -->
+                                        <div id="description">
+                                        </div>
 
-                        <div id="descriptionAndImportant">
-                            
-                            <div id="description">
-                                <h4>Park Description</h4>
-                            </div>
 
 
                             <!-- Important information links with 3 children -->
                             
-                            <button class="js-modal-trigger" data-target="modal-js-activities">
+                            <button class="js-modal-trigger button" data-target="modal-js-activities">
                                 Activities</button>
                                 <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
                                 <div id="gallery">
-                            
                                     </div>
-                                <div id="modal-js-activities" class="modal">
-                                    <div class="modal-background"></div>
-                                    <div class="modal-card">
-                                        <header class="modal-card-head">
-                                            <p class="modal-card-title">Activities</p>
-                                            <button class="delete" aria-label="close"></button>
-                                        </header>
-                                        <section id="activities" class="modal-card-body">
-                                            <!-- Content -->
-                                        </section>
-                                        <footer class="modal-card-foot">
-                                            <div class="buttons">
-                                                <button class="button">Done</button>
+
+                                    <!-- Park info including description and important info with two children -->
+
+                                    <div id="descriptionAndImportant">
+
+                                        <div id="description">
+                                        </div>
+
+
+                                        <!-- Important information links with 3 children -->
+                                        <br>
+                                        <div id="weather">
+
+                                        </div>
+                                        <br>
+                                        <button class="js-modal-trigger button" data-target="modal-js-activities">
+                                            Activities</button>
+                                        <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
+                                        <div id="gallery">
+
+                                        </div>
+                                        <div id="modal-js-activities" class="modal">
+                                            <div class="modal-background"></div>
+                                            <div class="modal-card">
+                                                <header class="modal-card-head">
+                                                    <p class="modal-card-title">Activities</p>
+                                                    <button class="delete" aria-label="close"></button>
+                                                </header>
+                                                <section id="activities" class="modal-card-body">
+                                                    <!-- Content -->
+                                                </section>
+                                                <footer class="modal-card-foot">
+                                                    <div class="buttons">
+                                                        <button class="button">Done</button>
+                                                    </div>
+                                                </footer>
                                             </div>
-                                        </footer>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                        
-                        
+
+
                         <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
                         <div id="gallery">
-                            
+
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+        </section>
+    </main>
 
-        <footer class="p-2">
-            <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
-            <p>Api Sources</p>
-        </footer>
+    <footer>
+        <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
+        <p>Api Sources</p>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
 
-        <script src="./assets/js/script.js"></script>
-    </body>
 </html>
