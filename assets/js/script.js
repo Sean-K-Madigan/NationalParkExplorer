@@ -6,7 +6,8 @@ const parkActivitiesEl = document.getElementById('activities')
 
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
-searchButton.addEventListener('click', function() {
+
+searchButton.addEventListener('click', function(event) {
     event.preventDefault();
     // Define the URL of the NPS API endpoint
     const apiUrl = 'https://developer.nps.gov/api/v1/parks';
@@ -59,7 +60,7 @@ searchButton.addEventListener('click', function() {
 
 // Make the fetch request
 
-  function createParkCard (data) {
+function createParkCard (data) {
 console.log(data.description);
 console.log(parkDescriptionEl);
 
@@ -79,6 +80,42 @@ console.log(parkDescriptionEl);
     parkActivitiesEl.appendChild(activitiesList);
 
   }
+
+
+
+const gallery = document.getElementById('gallery')
+function getParkPhotos(event){
+    event.preventDefault();
+    const apiUrl = `https://api.pexels.com/v1/search`
+    const parks = "Zion";
+    const fetchPics = `${apiUrl}?query=${parks}&per_page=6`;
+    fetch(fetchPics, {
+        headers: {
+            Authorization: "YHJTxEYXr7hGIeSQrGhw7Q5cjhlXubPRmgYVQUK7PXD6ZBhd3sjszejz"
+        }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch images")
+            }
+            return response.json();
+        })
+        .then (data => {
+            console.log(data)
+            gallery.innerHTML = '';
+            data.photos.forEach(photo => {
+              const img = document.createElement('img');
+              img.src = photo.src.medium;
+              gallery.appendChild(img);
+        });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+
+}
+searchButton.addEventListener('click', getParkPhotos);
+
   document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
     function openModal($el) {
