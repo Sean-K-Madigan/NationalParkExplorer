@@ -108,7 +108,7 @@ header {
     border: var(--brown) 7px double
 }
 
-#searchInput {
+#search-input {
     width: 100%;
     height: 20%;
     border-radius: 5px;
