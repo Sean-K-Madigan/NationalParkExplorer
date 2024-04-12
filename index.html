@@ -1,131 +1,134 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>National Park Explorer</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Tilt+Prism&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Park Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Tilt+Prism&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 
 
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
 
-    <body>
-        <!-- Header with title -->
-        <header>
+<body>
+    <!-- Header with title -->
+    <header>
+        <div class="container">
+            <div class="columns">
+
+                <div class="column is-9 titles">
+                    <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i
+                            class="fa-light fa-trees"></i>National Park Explorer</h1>
+                    <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
+                </div>
+                <div class="column">
+                    <div class="custom-search">
+                        <form class="search p-2 align-items-space-around">
+                            <input id='search-input' class="mb-5 " type="text"
+                                placeholder="What park will you visit next?" name="search">
+                            <button id='search-button' class="button justify-content-center"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+
+    <!-- Main section with two children one for search and recents and the other for info and images -->
+    <main>
+
+        <!-- Search and recent section with two children one for search bar and one for recents  -->
+
+        <section class="section">
             <div class="container">
                 <div class="columns">
 
-                    <div class="column is-9 titles">
-                        <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
-                        <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
-                    </div>
-                    <div class="column">
-                        <div class="custom-search">
-                        <form class="search p-2 align-items-space-around">
-                            <input id='search-input' class="mb-5 " type="text" placeholder="What park will you visit next?" name="search">
-                            <button id='search-button' class="button justify-content-center" type="submit">Search</button>
-                        </form>
-                </div>
-                </div>
-            </div>
-        </header>
-
-
-        <!-- Main section with two children one for search and recents and the other for info and images -->
-        <main>
-
-            <!-- Search and recent section with two children one for search bar and one for recents  -->
-
-            <section class="section">
-                <div class="container">
-                    <div class="columns">
-                    
                     <!-- Info and images section with two children -->
 
                     <!-- Park info section with two children -->
-                
+
                     <div id="parkInfo" class="column is-12-tablet custom-park-info">
-                        
+
                         <!-- Thumbnail with address link -->
                         <div id="park-name" class="column is-size-5">
-                            
+
                         </div>
 
                         <div class="container">
                             <div class="columns">
                                 <div class="column">
-                                <div id="descriptionAndImportant">
-                                    
-                                    <div id="description">
-                                        <h4>Park Description</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem! Nobis provident facilis voluptates, repudiandae voluptatum voluptas aliquam tempore voluptatem voluptate fuga exercitationem necessitatibus labore ea facere accusamus reiciendis sunt quasi animi quisquam consequatur iste. Quia eveniet repellat debitis iusto!</p>
+                                    <div id="descriptionAndImportant">
+
+                                        <div id="description">
+                                        </div>
+
                                     </div>
 
-                                </div>
-                        
-                        <!-- Park info including description and important info with two children -->
+                                    <!-- Park info including description and important info with two children -->
 
-                        <div id="descriptionAndImportant">
-                            
-                            <div id="description">
-                                <h4>Park Description</h4>
-                            </div>
+                                    <div id="descriptionAndImportant">
+
+                                        <div id="description">
+                                        </div>
 
 
-                            <!-- Important information links with 3 children -->
-                            
-                            <div id="weather">
-                                <h4>Weather</h4>
-                            </div>
-                            
-                            <button class="js-modal-trigger" data-target="modal-js-activities">
-                                Activities</button>
-                                <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
-                                <div id="gallery">
-                            
-                                    </div>
-                                <div id="modal-js-activities" class="modal">
-                                    <div class="modal-background"></div>
-                                    <div class="modal-card">
-                                        <header class="modal-card-head">
-                                            <p class="modal-card-title">Activities</p>
-                                            <button class="delete" aria-label="close"></button>
-                                        </header>
-                                        <section id="activities" class="modal-card-body">
-                                            <!-- Content -->
-                                        </section>
-                                        <footer class="modal-card-foot">
-                                            <div class="buttons">
-                                                <button class="button">Done</button>
+                                        <!-- Important information links with 3 children -->
+                                        <br>
+                                        <div id="weather">
+
+                                        </div>
+                                        <br>
+                                        <button class="js-modal-trigger button" data-target="modal-js-activities">
+                                            Activities</button>
+                                        <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
+                                        <div id="gallery">
+
+                                        </div>
+                                        <div id="modal-js-activities" class="modal">
+                                            <div class="modal-background"></div>
+                                            <div class="modal-card">
+                                                <header class="modal-card-head">
+                                                    <p class="modal-card-title">Activities</p>
+                                                    <button class="delete" aria-label="close"></button>
+                                                </header>
+                                                <section id="activities" class="modal-card-body">
+                                                    <!-- Content -->
+                                                </section>
+                                                <footer class="modal-card-foot">
+                                                    <div class="buttons">
+                                                        <button class="button">Done</button>
+                                                    </div>
+                                                </footer>
                                             </div>
-                                        </footer>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                        
-                        
+
+
                         <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
                         <div id="gallery">
-                            
+
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+        </section>
+    </main>
 
-        <footer>
-            <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
-            <p>Api Sources</p>
-        </footer>
+    <footer>
+        <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
+        <p>Api Sources</p>
+    </footer>
 
-        <script src="./assets/js/script.js"></script>
-    </body>
+    <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
