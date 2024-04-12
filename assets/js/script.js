@@ -106,7 +106,12 @@ function getParkPhotos(event){
           data.photos.forEach(photo => {
             const img = document.createElement('img');
             img.src = photo.src.medium;
+            const photographer = document.createElement('p');
+            photographer.classList.add('citing');
+            photographer.textContent = photo.photographer
             gallery.appendChild(img);
+            gallery.appendChild(photographer);
+
       });
       })
       .catch(error => {
@@ -157,3 +162,85 @@ searchButton.addEventListener('click', getParkPhotos);
       }
     });
   });
+
+  function openPage() {
+    const apiUrl = 'https://developer.nps.gov/api/v1/parks';
+    
+    // Define your API key (replace 'YOUR_API_KEY' with your actual API key)
+    const apiKey = 'zsg1JUezGGMHKiM4K9RLRe95wfbFzkZKZx5wr4V4';
+    
+    // Define the search term for Yellowstone National Park
+    const searchTerm = 'zion';
+    
+    // Construct the fetch URL with the search term and API key
+    const fetchUrl = `${apiUrl}?q=${searchTerm}&api_key=${apiKey}`;
+
+    fetch(fetchUrl)
+      .then(response => {
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // Parse the JSON response
+        return response.json();
+      })
+      .then(data => {
+        const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+        
+        // Check if the park was found
+        if (park) {
+    
+            const activityNames = park.activities.map(activity => activity.name)
+            // Display information about the park
+            const parkData = {
+                park: park.fullName,
+                description: park.description,
+                weather: park.weatherInfo,
+                activities: activityNames
+            }
+    
+            createParkCard(parkData);
+          console.log(parkData);
+        } else {
+          console.log('Park not found');
+        }
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error fetching data:', error);
+      });
+
+      const imageApiUrl = `https://api.pexels.com/v1/search`
+  const parks = 'zion';
+  const fetchPics = `${imageApiUrl}?query=${parks}&per_page=4`;
+  fetch(fetchPics, {
+      headers: {
+          Authorization: "YHJTxEYXr7hGIeSQrGhw7Q5cjhlXubPRmgYVQUK7PXD6ZBhd3sjszejz"
+      }
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Failed to fetch images")
+          }
+          return response.json();
+      })
+      .then (data => {
+          // Clear existing content
+          gallery.innerHTML = '';
+          data.photos.forEach(photo => {
+            const img = document.createElement('img');
+            img.src = photo.src.medium;
+            const photographer = document.createElement('p');
+            photographer.classList.add('citing');
+            photographer.textContent = photo.photographer
+            gallery.appendChild(img);
+            gallery.appendChild(photographer);
+      });
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+  }
+
+  openPage();
