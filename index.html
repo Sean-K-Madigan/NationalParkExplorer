@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Park Explorer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Tilt+Prism&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>National Park Explorer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Tilt+Prism&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
 
-<body>
-    <!-- Header with title -->
-    <header>
-        <div class="container">
-            <div class="columns">
+    <body>
+        <!-- Header with title -->
+        <header>
+            <div class="container">
+                <div class="columns is-multiline">
 
-                <div class="column is-9 titles">
-                    <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i
-                            class="fa-light fa-trees"></i>National Park Explorer</h1>
-                    <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
-                </div>
-                <div class="column">
-                    <div class="custom-search">
-                        <form class="search p-2 align-items-space-around">
+                    <div class="column is-9 titles">
+                        <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
+                        <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
+                    </div>
+                    <div class="column is--fullwidth">
+                        <div class="custom-search">
+                          <form class="search p-2 align-items-space-around">
                             <input id='search-input' class="mb-5 " type="text"
                                 placeholder="What park will you visit next?" name="search">
                             <button id='search-button' class="button justify-content-center"
@@ -69,6 +66,14 @@
                                         <div id="description">
                                         </div>
 
+
+
+                            <!-- Important information links with 3 children -->
+                            
+                            <button class="js-modal-trigger button" data-target="modal-js-activities">
+                                Activities</button>
+                                <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
+                                <div id="gallery">
                                     </div>
 
                                     <!-- Park info including description and important info with two children -->
@@ -127,7 +132,6 @@
         <h3 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">Adventure safely and enjoy!!</h3>
         <p>Api Sources</p>
     </footer>
-
     <script src="./assets/js/script.js"></script>
 </body>
 
