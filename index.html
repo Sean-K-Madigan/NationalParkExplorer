@@ -17,9 +17,24 @@
     <body>
         <!-- Header with title -->
         <header>
-            <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
-            <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
+            <div class="container">
+                <div class="columns">
+
+                    <div class="column is-9 titles">
+                        <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop"><i class="fa-light fa-trees"></i>National Park Explorer</h1>
+                        <h2 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop">- Your Next Adventure Awaits!</h2>
+                    </div>
+                    <div class="column">
+                        <div class="custom-search">
+                        <form class="search p-2 align-items-space-around">
+                            <input id='searchInput' class="mb-5 " type="text" placeholder="What park will you visit next?" name="search">
+                            <button id='searchBtn' class="button justify-content-center" type="submit">Search</button>
+                        </form>
+                </div>
+                </div>
+            </div>
         </header>
+
 
         <!-- Main section with two children one for search and recents and the other for info and images -->
         <main>
@@ -45,7 +60,7 @@
 
                     <!-- Park info section with two children -->
                 
-                    <div id="parkInfo" class="column is-12-tablet is-8-desktop custom-park-info">
+                    <div id="parkInfo" class="column is-12-tablet custom-park-info">
                         
                         <!-- Thumbnail with address link -->
                         <div id="park-name" class="column is-size-5">
@@ -54,6 +69,15 @@
 
                         <div class="container">
                             <div class="columns">
+                                <div class="column">
+                                <div id="descriptionAndImportant">
+                                    
+                                    <div id="description">
+                                        <h4>Park Description</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem! Nobis provident facilis voluptates, repudiandae voluptatum voluptas aliquam tempore voluptatem voluptate fuga exercitationem necessitatibus labore ea facere accusamus reiciendis sunt quasi animi quisquam consequatur iste. Quia eveniet repellat debitis iusto!</p>
+                                    </div>
+
+                                </div>
                         
                         <!-- Park info including description and important info with two children -->
 
