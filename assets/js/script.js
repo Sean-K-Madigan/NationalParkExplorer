@@ -107,13 +107,16 @@ function getParkPhotos(event){
           gallery.innerHTML = '';
           data.photos.forEach(photo => {
             const img = document.createElement('img');
+            const imgContainer = document.createElement('div')
+            imgContainer.classList.add('img-container');
             img.src = photo.src.medium;
             const photographer = document.createElement('p');
             photographer.classList.add('citing');
-            photographer.textContent = photo.photographer
-            gallery.appendChild(img);
-            gallery.appendChild(photographer);
-
+            imgContainer.classList.add('img-container');
+            photographer.textContent = `Photo by: ${photo.photographer} on Pexels`;
+            gallery.appendChild(imgContainer);
+            imgContainer.appendChild(photographer);            
+            imgContainer.appendChild(img);
       });
       })
       .catch(error => {
@@ -232,12 +235,16 @@ searchButton.addEventListener('click', getParkPhotos);
           gallery.innerHTML = '';
           data.photos.forEach(photo => {
             const img = document.createElement('img');
+            const imgContainer = document.createElement('div')
+            imgContainer.classList.add('img-container');
             img.src = photo.src.medium;
             const photographer = document.createElement('p');
             photographer.classList.add('citing');
-            photographer.textContent = photo.photographer
-            gallery.appendChild(img);
-            gallery.appendChild(photographer);
+            imgContainer.classList.add('img-container');
+            photographer.textContent = `Photo by: ${photo.photographer} on Pexels`;
+            gallery.appendChild(imgContainer);
+            imgContainer.appendChild(photographer);            
+            imgContainer.appendChild(img);
       });
       })
       .catch(error => {
