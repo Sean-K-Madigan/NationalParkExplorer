@@ -191,3 +191,31 @@ h3 {
 p {
     margin: 5px;
 }
+
+.img-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 20px;
+}
+
+#gallery img {
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 4px 4px 4px rgb(0, 0, 0, 0.4)
+}
+
+.citing {
+    display: inline-flex;
+    position: absolute;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 10px;
+    background-color: var(--ferngreen);
+    border-radius: 2px;
+    color: var(--brown);
+    box-shadow: 2px 2px 4px 2px rgb(0,0,0, .5);
+}
