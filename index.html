@@ -29,7 +29,7 @@
                         <form class="search p-2 align-items-space-around">
 
                             <input id='search-input' class="mb-5 " type="text"
-                                placeholder="What park will you visit next?" name="search">
+                                placeholder="What park will you visit next?" name="search" list="parks-list">
                                 <datalist id="parks-list"></datalist>
                             <button id='search-button' class="button justify-content-center"
                                 type="submit">Search</button>
@@ -63,16 +63,16 @@
                         <div class="container">
                             <div class="columns">
                                 <div class="column">
-                                    <div id="descriptionAndImportant">
+                                    <!-- <div id="descriptionAndImportant"> -->
 
-                                        <div id="description">
-                                        </div>
+                                        <!-- <div id="description">
+                                        </div> -->
 
 
 
                             <!-- Important information links with 3 children -->
-                                <div id="gallery">
-                                    </div>
+                                <!-- <div id="gallery">
+                                    </div> -->
 
                                     <!-- Park info including description and important info with two children -->
 
@@ -90,8 +90,8 @@
                                         <br>
                                         <button class="js-modal-trigger button" data-target="modal-js-activities">
                                             Activities</button>
+                                            <div id="gallery">
                                         <!-- image gallery with grid flexbox to display images we can use labels for photographer credits -->
-                                        <div id="gallery">
 
                                         </div>
                                         <div id="modal-js-activities" class="modal">

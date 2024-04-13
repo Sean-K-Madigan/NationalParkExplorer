@@ -70,7 +70,8 @@ function createParkCard (data) {
   parkWeatherEl.innerHTML = '';
   parkActivitiesEl.innerHTML = '';
 
-  const newHeader = document.createElement('h2');
+  const newHeader = document.createElement('h1');
+  newHeader.classList.add('park-name')
   const descriptionParagraph = document.createElement('p');
   const weatherParagraph = document.createElement('p');
   parkNameEl.appendChild(newHeader).textContent = data.park;
