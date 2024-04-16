@@ -5,7 +5,9 @@ const parkDescriptionEl = document.getElementById('description');
 const parkWeatherEl = document.getElementById('weather');
 const parkActivitiesEl = document.getElementById('activities')
 const searchTerm = getRandomPark();
+const addToFavorites = document.getElementById('add-to-favorites')
 
+let favoriteApiURl;
 
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
@@ -35,7 +37,7 @@ searchButton.addEventListener('click', function(event) {
       })
       .then(data => {
         const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+        favoriteApiURl = fetchUrl
         
         // Check if the park was found
         if (park) {
@@ -219,7 +221,7 @@ searchButton.addEventListener('click', getParkPhotos);
       })
       .then(data => {
         const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+        favoriteApiURl = fetchUrl
         
         // Check if the park was found
         if (park) {
@@ -279,5 +281,17 @@ searchButton.addEventListener('click', getParkPhotos);
           console.error('Error fetching data:', error);
       });
   }
+
+addToFavorites.addEventListener('click', function() {
+
+    const fetchUrl = favoriteApiURl
+
+    let savedUrls = JSON.parse(localStorage.getItem('savedUrls')) || [];
+
+    savedUrls.push(fetchUrl);
+    localStorage.setItem('savedUrls', JSON.stringify(savedUrls))
+    
+    console.log(savedUrls)
+})
 
   openPage();
