@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Tilt+Prism&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
 
 
         <link rel="stylesheet" href="./assets/css/style.css">
@@ -33,6 +34,8 @@
                                 <datalist id="parks-list"></datalist>
                             <button id='search-button' class="button justify-content-center"
                                 type="submit">Search</button>
+                            <button class="js-modal-trigger button" data-target="modal-js-favorites">
+                                Favorites</button>
                         </form>
                     </div>
                 </div>
@@ -56,6 +59,9 @@
                     <div id="parkInfo" class="column is-12-tablet custom-park-info">
 
                         <!-- Thumbnail with address link -->
+                        <div class="popup-parent">
+                            <button id="add-to-favorites" class="button add-to-fav-btn"><i class="fa-solid fa-plus fa-2xl" style="color: #ffffff;"></i></button>
+                        </div>
                         <div id="park-name" class="column is-size-5">
 
                         </div>
