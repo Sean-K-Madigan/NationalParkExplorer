@@ -153,7 +153,6 @@ h2 {
     font-weight: 600;
     text-align: center;
     text-shadow: 2px 2px 2px var(--text-shadow);
-    text-decoration: ;
 }
 
 /* Main */
@@ -252,8 +251,4 @@ p {
     border-radius: 2px;
     color: var(--brown);
     box-shadow: 2px 2px 4px 2px rgb(0,0,0, .5);
-}
-
-.park-name {
-
 }
