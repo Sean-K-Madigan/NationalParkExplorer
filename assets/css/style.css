@@ -147,6 +147,15 @@ h2 {
     margin-left: 75px;
 }
 
+.park-name {
+    color: var(--brown);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 2px 2px 2px var(--text-shadow);
+    text-decoration: ;
+}
+
 /* Main */
 /* Search and Recent Div */
 
@@ -157,6 +166,31 @@ h2 {
 .custom-park-info {
     border: var(--brown) dotted 6px;
     border-radius: 15px;
+}
+
+/* Favorite Button */
+.popup-parent {
+    position: relative;
+    width: 100%;
+
+}
+
+.add-to-fav-btn {
+    height: 25px;
+    width: 25px;
+}
+
+.add-to-fav-btn:hover::after {
+    content: 'Add me to your favorites!';
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    background-color: var(--ferngreen);
+    color: var(--yellow);
+    border-radius: 5px;
+    padding: 3px;
+
+
 }
 
 /* Footer */
