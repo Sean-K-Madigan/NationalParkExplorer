@@ -38,7 +38,7 @@ Have a quality README (with unique name, description, technologies used, screens
 
 ## Deployed Link
 
-www.national-park-explorer.com
+[www.national-park-explorer.com](https://sean-k-madigan.github.io/NationalParkExplorer/)
 
 ## Installation
 
