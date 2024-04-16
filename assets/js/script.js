@@ -4,8 +4,9 @@ const parkNameEl = document.getElementById('park-name');
 const parkDescriptionEl = document.getElementById('description');
 const parkWeatherEl = document.getElementById('weather');
 const parkActivitiesEl = document.getElementById('activities')
-const searchTerm = getRandomPark();
+const randomPark = getRandomPark();
 const addToFavorites = document.getElementById('add-to-favorites')
+const favoritesList = document.getElementById('favorites-list')
 
 let favoriteApiURl;
 
@@ -37,7 +38,7 @@ searchButton.addEventListener('click', function(event) {
       })
       .then(data => {
         const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
-        favoriteApiURl = fetchUrl
+        favoriteApiURl = searchTerm;
         
         // Check if the park was found
         if (park) {
@@ -206,9 +207,9 @@ searchButton.addEventListener('click', getParkPhotos);
     
     
     // Construct the fetch URL with the search term and API key
-    const fetchUrl = `${apiUrl}?q=${searchTerm}&api_key=${apiKey}`;
+    const fetchUrl = `${apiUrl}?q=${randomPark}&api_key=${apiKey}`;
 
-    console.log(searchTerm);
+    console.log(randomPark);
 
     fetch(fetchUrl)
       .then(response => {
@@ -220,8 +221,8 @@ searchButton.addEventListener('click', getParkPhotos);
         return response.json();
       })
       .then(data => {
-        const park = data.data.find(park => park.fullName.toLowerCase().includes(searchTerm.toLowerCase()));
-        favoriteApiURl = fetchUrl
+        const park = data.data.find(park => park.fullName.toLowerCase().includes(randomPark.toLowerCase()));
+        favoriteApiURl = randomPark;
         
         // Check if the park was found
         if (park) {
@@ -247,7 +248,7 @@ searchButton.addEventListener('click', getParkPhotos);
       });
 
       const imageApiUrl = `https://api.pexels.com/v1/search`
-      const imageSearchTerm = searchTerm + ' National Park';
+      const imageSearchTerm = randomPark + ' National Park';
   const fetchPics = `${imageApiUrl}?query=${imageSearchTerm}&per_page=4`;
   fetch(fetchPics, {
       headers: {
@@ -282,16 +283,115 @@ searchButton.addEventListener('click', getParkPhotos);
       });
   }
 
-addToFavorites.addEventListener('click', function() {
+  addToFavorites.addEventListener('click', function() {
+    let savedSearchTerms = JSON.parse(localStorage.getItem('savedSearchTerms')) || [];
 
-    const fetchUrl = favoriteApiURl
-
-    let savedUrls = JSON.parse(localStorage.getItem('savedUrls')) || [];
-
-    savedUrls.push(fetchUrl);
-    localStorage.setItem('savedUrls', JSON.stringify(savedUrls))
-    
-    console.log(savedUrls)
+    if (!savedSearchTerms.includes(favoriteApiURl)) {
+        savedSearchTerms.push(favoriteApiURl);
+        localStorage.setItem('savedSearchTerms', JSON.stringify(savedSearchTerms));
+        appendToFavoriteList(favoriteApiURl);
+    }
 })
 
+function appendToFavoriteList(favoriteApiURl) {
+    const listItem = document.createElement('option');
+    listItem.textContent = favoriteApiURl;
+    favoritesList.appendChild(listItem);
+}
+
+function loadFavorites() {
+  let savedSearchTerms = JSON.parse(localStorage.getItem('savedSearchTerms')) || [];
+  savedSearchTerms.forEach(term => appendToFavoriteList(term));
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', loadFavorites);
+favoritesList.addEventListener('change', function() {
+  const selectedOption = favoritesList.options[favoritesList.selectedIndex];
+  if (selectedOption.value !== '') {
+    loadFavorite(selectedOption.value);
+  }});
+  function loadFavorite(favoriteName) {
+    const apiUrl = 'https://developer.nps.gov/api/v1/parks';
+    
+    // Define your API key (replace 'YOUR_API_KEY' with your actual API key)
+    const apiKey = 'zsg1JUezGGMHKiM4K9RLRe95wfbFzkZKZx5wr4V4';
+    
+    // Define the search term for Yellowstone National Park
+    
+    
+    // Construct the fetch URL with the search term and API key
+    const fetchUrl = `${apiUrl}?q=${favoriteName}&api_key=${apiKey}`
+    
+    // Define your API key (replace
+    fetch(fetchUrl)
+    .then(response => {
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      // Parse the JSON response
+      return response.json();
+    })
+    .then(data => {
+      const park = data.data.find(park => park.fullName.toLowerCase().includes(favoriteName.toLowerCase()));
+      favoriteApiURl = favoriteName;
+      
+      // Check if the park was found
+      if (park) {
+  
+          const activityNames = park.activities.map(activity => activity.name)
+          // Display information about the park
+          const parkData = {
+              park: park.fullName,
+              description: park.description,
+              weather: park.weatherInfo,
+              activities: activityNames
+          }
+  
+          createParkCard(parkData);
+        console.log(parkData);
+      } else {
+        console.log('Park not found');
+      }
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error fetching data:', error);
+    });
+    const imageApi = `https://api.pexels.com/v1/search`
+    const parks = favoriteName + ' National Park';
+    const fetchPics = `${imageApi}?query=${parks}&per_page=4`;
+    fetch(fetchPics, {
+        headers: {
+            Authorization: "YHJTxEYXr7hGIeSQrGhw7Q5cjhlXubPRmgYVQUK7PXD6ZBhd3sjszejz"
+        }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch images")
+            }
+            return response.json();
+        })
+        .then (data => {
+            // Clear existing content
+            gallery.innerHTML = '';
+            data.photos.forEach(photo => {
+              const img = document.createElement('img');
+              const imgContainer = document.createElement('div')
+              imgContainer.classList.add('img-container');
+              img.src = photo.src.medium;
+              const photographer = document.createElement('p');
+              photographer.classList.add('citing');
+              imgContainer.classList.add('img-container');
+              photographer.textContent = `Photo by: ${photo.photographer} on Pexels`;
+              gallery.appendChild(imgContainer);
+              imgContainer.appendChild(photographer);            
+              imgContainer.appendChild(img);
+        });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+  }
   openPage();
