@@ -63,4 +63,3 @@ See associated licenses
 
 ## Screenshot of application
 ![Application Screenshot](image.png)
-
