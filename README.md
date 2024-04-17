@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The goal of this application is to allow the user to aquire important national park information in a clean interactive window. The user will be able to search for a national park and be presented with important information such as fees and passes, tours, and closures in the park courtesy of the National Parks API. They will also be able to see images of the park they search for courtesy of the Pexel API.
+The goal of this application is to allow the user to aquire important national park information in a clean interactive window. The user will be able to search for a national park and be presented with important information such as fees and passes, tours, and closures in the park courtesy of the National Parks Service API. They will also be able to see images of the park they search for courtesy of the Pexel API.
 
 ## User Story
 
@@ -38,7 +38,7 @@ Have a quality README (with unique name, description, technologies used, screens
 
 ## Deployed Link
 
-[www.national-park-explorer.com](https://sean-k-madigan.github.io/NationalParkExplorer/)
+https://sean-k-madigan.github.io/NationalParkExplorer/
 
 ## Installation
 
@@ -53,21 +53,14 @@ Demonstrates our ability to effectively, cohesively, and collaboratively work as
 In no particular order:
 Ben Schwendiman, Eric Edmunds, John Shumway, Brett Czerwinski, Sean Madigan
 
+APIs used:
+National Parks Service API
+Pexel API
+
 ## License
 
 See associated licenses
 
 ## Screenshot of application
+![Application Screenshot](image.png)
 
-
-
-### Notes
-modal to increase image size
-modal to show additional info about clicked important information
-store images in a favorites list
-store previous seraches 
-
-icebox issues
-link to nav api for mobile compatibilty
-
-make fetch request to see what we can get Back
